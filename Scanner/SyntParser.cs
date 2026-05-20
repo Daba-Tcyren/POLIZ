@@ -116,7 +116,7 @@ namespace Scanner
             }
 
             // встретили закрывающую скобку, но нет открывающей
-            else if (currentToken.id == 9 && countParenthesis == 0)
+            else if (currentToken.id == 9 && countParenthesis <= 0)
             {
                 string bufferName = "";
                 string bufferLocation = currentToken.location;
@@ -223,7 +223,8 @@ namespace Scanner
                 {
                     bufferName += currentToken.name;
                     // выход
-                    if (currentToken.id != 9)
+                    if (countParenthesis > 0) break;
+                    if (currentToken.id != 9 && countParenthesis <= 0)
                     {
                         bufferName = bufferName.Replace(currentToken.name, "");
                         Token lastToken = tokens[currentPos - 1];
@@ -252,7 +253,8 @@ namespace Scanner
                         return;
                     }
                 }
-                if (currentToken.id == 1 || currentToken.id == 2 || currentToken.id == 8) T();
+                if (currentToken == null) return;
+                else if (currentToken.id == 1 || currentToken.id == 2 || currentToken.id == 8) T();
                 else if (currentToken.id == 3 || currentToken.id == 4) A();
                 else if (currentToken.id == 5 || currentToken.id == 6 || currentToken.id == 7) B();
                 else if (currentToken.id == 9) return;
