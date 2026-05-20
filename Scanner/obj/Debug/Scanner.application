@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Scanner.exe.manifest" size="11296">
+    <dependentAssembly dependencyType="install" codebase="Scanner.exe.manifest" size="4946">
       <assemblyIdentity name="Scanner.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JqG55m4Tfg76bDS9MM5XLRcgZMEjy0rJBg7MJQ2tqRg=</dsig:DigestValue>
+        <dsig:DigestValue>uGLAQeuEF6npyNSaYhTejBkJ6dCtXqzCvY2VTPbeHZ8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -99,15 +99,17 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.outputBoxParser = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.outputBoxTetrad = new System.Windows.Forms.DataGridView();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.richTextBoxPOLIZ = new System.Windows.Forms.RichTextBox();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.outputBoxSemError = new System.Windows.Forms.DataGridView();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.richTextBoxAST = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.outputBox)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -117,7 +119,7 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outputBoxParser)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.outputBoxSemError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outputBoxTetrad)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -788,10 +790,10 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.outputBoxParser);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(951, 302);
+            this.tabPage3.Size = new System.Drawing.Size(951, 299);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Синтаксический анализатор";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -801,6 +803,7 @@
             this.outputBoxParser.AllowUserToAddRows = false;
             this.outputBoxParser.AllowUserToDeleteRows = false;
             this.outputBoxParser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.outputBoxParser.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.outputBoxParser.ColumnHeadersHeight = 29;
             this.outputBoxParser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4,
@@ -812,9 +815,91 @@
             this.outputBoxParser.ReadOnly = true;
             this.outputBoxParser.RowHeadersVisible = false;
             this.outputBoxParser.RowHeadersWidth = 51;
-            this.outputBoxParser.Size = new System.Drawing.Size(945, 296);
+            this.outputBoxParser.Size = new System.Drawing.Size(945, 293);
             this.outputBoxParser.TabIndex = 0;
             this.outputBoxParser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.outputBoxParser_CellClick);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.outputBoxTetrad);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(951, 299);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Тетрады";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // outputBoxTetrad
+            // 
+            this.outputBoxTetrad.AllowUserToAddRows = false;
+            this.outputBoxTetrad.AllowUserToDeleteRows = false;
+            this.outputBoxTetrad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.outputBoxTetrad.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.outputBoxTetrad.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            this.outputBoxTetrad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.outputBoxTetrad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10});
+            this.outputBoxTetrad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.outputBoxTetrad.Location = new System.Drawing.Point(3, 3);
+            this.outputBoxTetrad.Name = "outputBoxTetrad";
+            this.outputBoxTetrad.ReadOnly = true;
+            this.outputBoxTetrad.RowHeadersWidth = 51;
+            this.outputBoxTetrad.Size = new System.Drawing.Size(945, 293);
+            this.outputBoxTetrad.TabIndex = 0;
+            this.outputBoxTetrad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.outputBoxSemError_CellClick);
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Операция";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Аргумент 1";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Аргумент 2";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Результат";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.richTextBoxPOLIZ);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(951, 299);
+            this.tabPage4.TabIndex = 4;
+            this.tabPage4.Text = "ПОЛИЗ";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // richTextBoxPOLIZ
+            // 
+            this.richTextBoxPOLIZ.BackColor = System.Drawing.SystemColors.Window;
+            this.richTextBoxPOLIZ.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxPOLIZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBoxPOLIZ.Location = new System.Drawing.Point(3, 3);
+            this.richTextBoxPOLIZ.Name = "richTextBoxPOLIZ";
+            this.richTextBoxPOLIZ.ReadOnly = true;
+            this.richTextBoxPOLIZ.Size = new System.Drawing.Size(945, 293);
+            this.richTextBoxPOLIZ.TabIndex = 0;
+            this.richTextBoxPOLIZ.Text = "";
             // 
             // Column4
             // 
@@ -836,75 +921,6 @@
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.outputBoxSemError);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(951, 299);
-            this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "Семантический анализатор";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // outputBoxSemError
-            // 
-            this.outputBoxSemError.AllowUserToAddRows = false;
-            this.outputBoxSemError.AllowUserToDeleteRows = false;
-            this.outputBoxSemError.AllowUserToOrderColumns = true;
-            this.outputBoxSemError.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.outputBoxSemError.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.outputBoxSemError.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            this.outputBoxSemError.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.outputBoxSemError.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column7,
-            this.Column8});
-            this.outputBoxSemError.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outputBoxSemError.Location = new System.Drawing.Point(3, 3);
-            this.outputBoxSemError.Name = "outputBoxSemError";
-            this.outputBoxSemError.ReadOnly = true;
-            this.outputBoxSemError.RowHeadersVisible = false;
-            this.outputBoxSemError.RowHeadersWidth = 51;
-            this.outputBoxSemError.Size = new System.Drawing.Size(945, 293);
-            this.outputBoxSemError.TabIndex = 0;
-            this.outputBoxSemError.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.outputBoxSemError_CellClick);
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Сообщение";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Позиция";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.richTextBoxAST);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(951, 299);
-            this.tabPage4.TabIndex = 4;
-            this.tabPage4.Text = "AST";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // richTextBoxAST
-            // 
-            this.richTextBoxAST.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.richTextBoxAST.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxAST.Location = new System.Drawing.Point(3, 3);
-            this.richTextBoxAST.Name = "richTextBoxAST";
-            this.richTextBoxAST.ReadOnly = true;
-            this.richTextBoxAST.Size = new System.Drawing.Size(945, 293);
-            this.richTextBoxAST.TabIndex = 0;
-            this.richTextBoxAST.Text = "";
             // 
             // FormGUI
             // 
@@ -936,7 +952,7 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.outputBoxParser)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.outputBoxSemError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outputBoxTetrad)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1014,15 +1030,17 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView outputBoxParser;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView outputBoxTetrad;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.RichTextBox richTextBoxPOLIZ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView outputBoxSemError;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.RichTextBox richTextBoxAST;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
 

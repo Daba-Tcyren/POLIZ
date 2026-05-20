@@ -25,7 +25,8 @@ namespace Scanner
         {
             InitializeComponent();
 
-            outputBoxSemError.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            outputBoxTetrad.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            outputBoxParser.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             files.TabPages.Add(NewFile("Новый документ" + (files.TabCount + 1).ToString()));
         }
 
@@ -49,7 +50,6 @@ namespace Scanner
             inputBoxFile.SelectionChanged += new EventHandler(inputBox_SelectionChanged);
             inputBoxFile.VScroll += new EventHandler(inputBox_VScroll);
             inputBoxFile.TextChanged += new EventHandler(inputBox_TextChanged);
-            
             inputBox = inputBoxFile;
 
             ReportFile reportFile = new ReportFile();
@@ -218,8 +218,8 @@ namespace Scanner
             {
                 outputBox.Rows.Clear();
                 outputBoxParser.Rows.Clear();
-                outputBoxSemError.Rows.Clear();
-                richTextBoxAST.Clear();
+                outputBoxTetrad.Rows.Clear();
+                richTextBoxPOLIZ.Clear();
 
                 scanner scannerWork = new scanner();
                 List<Token> tokens = scannerWork.analyze(inputBox.Text);
@@ -227,11 +227,10 @@ namespace Scanner
                 Parser syntParser = new Parser();
                 List<SyntError> errorParser = syntParser.Parse(tokens);
 
-                SemAnalyzer semAnalyzer = new SemAnalyzer();
-                
+                POLIZ pOLIZ = new POLIZ();
 
                 ReportFile tempReport = new ReportFile();
-                
+
                 foreach (Token token in tokens)
                 {
                     outputBox.Rows.Add(token.id, token.type, token.name, token.location);
@@ -242,24 +241,20 @@ namespace Scanner
                 {
                     outputBoxParser.Rows.Add(error.invalidFragment, error.location, error.description);
                 }
-                if (errorParser.Count == 1 && errorParser[0].invalidFragment == "Успешно" && errorParser[0].location == "" && errorParser[0].description == "Синтаксический анализ завершен без ошибок") 
+                if (errorParser.Count == 1 && errorParser[0].invalidFragment == "Успешно" && errorParser[0].location == "" && errorParser[0].description == "Синтаксический анализ завершен без ошибок")
                 {
-                    List<List<string>> trees = semAnalyzer.Analyze(tokens);
-                    foreach(List<string> tree in trees){
-                        foreach (string line in tree){
-                            richTextBoxAST.Text += line + Environment.NewLine;
-                        }
+                    List<Tetrad> tetrads = pOLIZ.calculate(tokens);
+
+                    foreach (Tetrad tetrad in tetrads)
+                    {
+                        outputBoxTetrad.Rows.Add(tetrad.operation, tetrad.argument1, tetrad.argument2, tetrad.result);
                     }
 
-                    foreach(SemError error in semAnalyzer.errors)
-                    {
-                        outputBoxSemError.Rows.Add(error.description, error.location);
-                    }
-                    
+                    richTextBoxPOLIZ.Text = pOLIZ.getResultPOLIZ();
                 }
                 else outputBoxParser.Rows.Add("Количество ошибок:", errorParser.Count, "");
-                
-                
+
+
                 int indexFile = files.SelectedIndex;
                 report.RemoveAt(indexFile);
                 report.Insert(indexFile, tempReport);
@@ -713,6 +708,13 @@ namespace Scanner
             inputBox.Focus();
             if (e.RowIndex == -1) return;
             string position = outputBoxParser.Rows[e.RowIndex].Cells[1].Value.ToString();
+            if (position == "позиция неизвестна")
+            {
+                inputBox.Select(inputBox.Text.Length, 1);
+                return;
+            }
+            else if (outputBoxParser.Rows[e.RowIndex].Cells[0].Value.ToString() == "Количество ошибок:") return;
+            else if (position == "") return;
             string location = position.Split(' ')[1];
             string line = location.Split(',')[0];
             int numberLine = Convert.ToInt32(line);
@@ -723,15 +725,15 @@ namespace Scanner
 
         private void outputBoxSemError_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            inputBox.Focus();
-            if (e.RowIndex == -1) return;
-            string position = outputBoxSemError.Rows[e.RowIndex].Cells[1].Value.ToString();
-            string location = position.Split(' ')[1];
-            string line = location.Split(',')[0];
-            int numberLine = Convert.ToInt32(line);
-            string inLine = position.Split(' ')[2];
-            int positioninstr = Convert.ToInt32(inLine.Split('-')[0]);
-            inputBox.Select(inputBox.GetFirstCharIndexFromLine(numberLine - 1) + positioninstr - 1, 1);
+            //inputBox.Focus();
+            //if (e.RowIndex == -1) return;
+            //string position = outputBoxTetrad.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //string location = position.Split(' ')[1];
+            //string line = location.Split(',')[0];
+            //int numberLine = Convert.ToInt32(line);
+            //string inLine = position.Split(' ')[2];
+            //int positioninstr = Convert.ToInt32(inLine.Split('-')[0]);
+            //inputBox.Select(inputBox.GetFirstCharIndexFromLine(numberLine - 1) + positioninstr - 1, 1);
         }
 
         // Меню - Текст
@@ -865,10 +867,8 @@ namespace Scanner
 
             RichTextBox textBox = new RichTextBox();
             textBox.Dock = DockStyle.Fill;
-            
             textBox.Font = new Font("Times New Roman", 14);
             // Текст с выравниванием по центру
-           
             textBox.SelectionFont = new Font("Times New Roman", 14, FontStyle.Regular);
             textBox.SelectionAlignment = HorizontalAlignment.Left;
             textBox.AppendText("Метод анализа\n\n");
@@ -878,7 +878,6 @@ namespace Scanner
                               "словаре грамматики) либо выходу из обработки очередного символа и переходу на старт обработки следующего.\n\n");
 
             textBox.SelectionAlignment = HorizontalAlignment.Center;
-            
             Clipboard.SetImage(Properties.Resources.diagram_states);
             textBox.Paste();
             textBox.AppendText("\nРисунок 1 – Диаграмма состояний\n");
@@ -891,7 +890,6 @@ namespace Scanner
                               "Состояние 18 символизирует успешное завершение разбора.\n\n");
 
             textBox.SelectionAlignment = HorizontalAlignment.Center;
-            
             Clipboard.SetImage(Properties.Resources.graph_grammar);
             textBox.Paste();
             textBox.AppendText("\nРисунок 2 – Граф G[<START>]\n");

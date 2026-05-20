@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+#pragma warning disable IDE0055
 
 namespace Scanner
 {
@@ -34,25 +35,14 @@ namespace Scanner
 
             while (currentPosition <= text.Length)
             {
-                if (char.IsLetter(liter))
+                if (IsLetter(liter))
                 {
                     buffer += liter;
-                    while (char.IsLetterOrDigit(liter = getChar()))
+                    while (IsLetter(liter = getChar()) || char.IsDigit(liter) || liter == '_')
                     {
                         buffer += liter;
                     }
-                    switch (buffer)
-                    {
-                        case "Complex":
-                            addToken(1, "Ключевое слово Complex", buffer);
-                            break;
-                        case "new":
-                            addToken(2, "Ключевое слово new", buffer);
-                            break;
-                        default:
-                            addToken(3, "Идентификатор", buffer);
-                            break;
-                    }
+                    addToken(1, "Идентификатор", buffer);
                     buffer = "";
                 }
                 else if (char.IsDigit(liter))
@@ -62,19 +52,7 @@ namespace Scanner
                     {
                         buffer += liter;
                     }
-                    if (liter == '.')
-                    {
-                        buffer += liter;
-                        while (char.IsDigit(liter = getChar()))
-                        {
-                            buffer += liter;
-                        }
-                        addToken(11, "Вещественное число", buffer);
-                    }
-                    else
-                    {
-                        addToken(10, "Целое без знака", buffer);
-                    }
+                    addToken(2, "Целое число без знака", buffer);
                     buffer = "";
                 }
                 else
@@ -89,63 +67,49 @@ namespace Scanner
                             currentLine++;
                             getNext();
                             break;
-                        case '=':
-                            buffer += liter;
-                            getNext();
-                            addToken(4, "Оператор присваивания", buffer);
-                            buffer = "";
-                            break;
                         case ' ':
-                            buffer += liter;
                             getNext();
-                            addToken(5, "Разделитель", buffer);
-                            buffer = "";
-                            break;
-                        case '(':
-                            buffer += liter;
-                            getNext();
-                            addToken(6, "Оператор конструктора", buffer);
-                            buffer = "";
-                            break;
-                        case ')':
-                            buffer += liter;
-                            getNext();
-                            addToken(7, "Оператор конструктора", buffer);
-                            buffer = "";
                             break;
                         case '-':
                             buffer += liter;
                             getNext();
-                            addToken(8, "Знак минуса", buffer);
+                            addToken(3, "Знак вычитания", buffer);
                             buffer = "";
                             break;
                         case '+':
                             buffer += liter;
                             getNext();
-                            addToken(9, "Знак плюса", buffer);
+                            addToken(4, "Знак сложения", buffer);
                             buffer = "";
                             break;
-                        case ',':
+                        case '*':
                             buffer += liter;
                             getNext();
-                            addToken(12, "Оператор перечисления", buffer);
+                            addToken(5, "Знак умножения", buffer);
                             buffer = "";
                             break;
-                        case ';':
+                        case '/':
                             buffer += liter;
                             getNext();
-                            addToken(13, "Оператор заверешения", buffer);
+                            addToken(6, "Знак деления", buffer);
                             buffer = "";
                             break;
-                        case '"':
-                            buffer += liter;
-                            while ((liter = getChar())!='"' && liter != '\0' && currentPosition < text.Length)
-                            {
-                                buffer += liter;
-                            }
+                        case '%':
                             buffer += liter;
                             getNext();
-                            addToken(14, "Строка", buffer);
+                            addToken(7, "Знак остаток от деления", buffer);
+                            buffer = "";
+                            break;
+                        case '(':
+                            buffer += liter;
+                            getNext();
+                            addToken(8, "Открывающая скобка", buffer);
+                            buffer = "";
+                            break;
+                        case ')':
+                            buffer += liter;
+                            getNext();
+                            addToken(9, "Закрывающая скобка", buffer);
                             buffer = "";
                             break;
                         default:
@@ -180,6 +144,7 @@ namespace Scanner
                 throw new Exception("В конце строки не обнаружено ;");
             }
         }
+        
         private void getNext()
         {
             liter = getChar();
@@ -190,6 +155,10 @@ namespace Scanner
             int leng = positionLine - Length;
             string loc = $"строка {currentLine}, {leng}-{positionLine - 1}";
             tokens.Add(new Token(id, type, name, loc));
+        }
+        private bool IsLetter(char c)
+        {
+            return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
         }
     }
 }

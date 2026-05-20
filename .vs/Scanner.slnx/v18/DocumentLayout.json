@@ -1,29 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dabac\\source\\repos\\Scanner\\",
+  "WorkspaceRootPath": "C:\\Users\\dabac\\source\\repos\\POLIZ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|C:\\Users\\dabac\\source\\repos\\Scanner\\scanner\\ast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|solutionrelative:scanner\\ast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|C:\\Users\\dabac\\source\\repos\\Scanner\\scanner\\semanalyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|solutionrelative:scanner\\semanalyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|C:\\Users\\dabac\\source\\repos\\Scanner\\scanner\\formgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|C:\\Users\\dabac\\source\\repos\\POLIZ\\scanner\\formgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|solutionrelative:scanner\\formgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|c:\\users\\dabac\\source\\repos\\scanner\\scanner\\syntparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|solutionrelative:scanner\\syntparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|c:\\users\\dabac\\source\\repos\\poliz\\scanner\\poliz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|solutionrelative:scanner\\poliz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|C:\\Users\\dabac\\source\\repos\\Scanner\\scanner\\formgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|C:\\Users\\dabac\\source\\repos\\POLIZ\\scanner\\formgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|solutionrelative:scanner\\formgui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|C:\\Users\\dabac\\source\\repos\\Scanner\\scanner\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|c:\\users\\dabac\\source\\repos\\poliz\\scanner\\syntparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|solutionrelative:scanner\\syntparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|C:\\Users\\dabac\\source\\repos\\POLIZ\\scanner\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{31BD1B41-0172-44AB-83F2-BAB7113AFA35}|Scanner\\Scanner.csproj|solutionrelative:scanner\\scanner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,60 +30,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "scanner.cs",
-              "DocumentMoniker": "C:\\Users\\dabac\\source\\repos\\Scanner\\Scanner\\scanner.cs",
+              "DocumentMoniker": "C:\\Users\\dabac\\source\\repos\\POLIZ\\Scanner\\scanner.cs",
               "RelativeDocumentMoniker": "Scanner\\scanner.cs",
-              "ToolTip": "C:\\Users\\dabac\\source\\repos\\Scanner\\Scanner\\scanner.cs",
+              "ToolTip": "C:\\Users\\dabac\\source\\repos\\POLIZ\\Scanner\\scanner.cs",
               "RelativeToolTip": "Scanner\\scanner.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAAAI0AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-18T03:43:19.794Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SyntParser.cs",
-              "DocumentMoniker": "C:\\Users\\dabac\\source\\repos\\Scanner\\Scanner\\SyntParser.cs",
-              "RelativeDocumentMoniker": "Scanner\\SyntParser.cs",
-              "ToolTip": "C:\\Users\\dabac\\source\\repos\\Scanner\\Scanner\\SyntParser.cs",
-              "RelativeToolTip": "Scanner\\SyntParser.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAcwCYAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T10:30:34.799Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "FormGUI.cs",
-              "DocumentMoniker": "C:\\Users\\dabac\\source\\repos\\Scanner\\Scanner\\FormGUI.cs",
+              "DocumentMoniker": "C:\\Users\\dabac\\source\\repos\\POLIZ\\Scanner\\FormGUI.cs",
               "RelativeDocumentMoniker": "Scanner\\FormGUI.cs",
-              "ToolTip": "C:\\Users\\dabac\\source\\repos\\Scanner\\Scanner\\FormGUI.cs",
-              "RelativeToolTip": "Scanner\\FormGUI.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\dabac\\source\\repos\\POLIZ\\Scanner\\FormGUI.cs*",
+              "RelativeToolTip": "Scanner\\FormGUI.cs*",
+              "ViewState": "AgIAANUAAAAAAAAAAAAgwO4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-18T03:43:19.837Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AST.cs",
-              "DocumentMoniker": "C:\\Users\\dabac\\source\\repos\\Scanner\\Scanner\\AST.cs",
-              "RelativeDocumentMoniker": "Scanner\\AST.cs",
-              "ToolTip": "C:\\Users\\dabac\\source\\repos\\Scanner\\Scanner\\AST.cs",
-              "RelativeToolTip": "Scanner\\AST.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAD4vxoAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T15:51:20.619Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -125,32 +94,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SemAnalyzer.cs",
-              "DocumentMoniker": "C:\\Users\\dabac\\source\\repos\\Scanner\\Scanner\\SemAnalyzer.cs",
-              "RelativeDocumentMoniker": "Scanner\\SemAnalyzer.cs",
-              "ToolTip": "C:\\Users\\dabac\\source\\repos\\Scanner\\Scanner\\SemAnalyzer.cs",
-              "RelativeToolTip": "Scanner\\SemAnalyzer.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAApwIIAAAAQAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "SyntParser.cs",
+              "DocumentMoniker": "C:\\Users\\dabac\\source\\repos\\POLIZ\\Scanner\\SyntParser.cs",
+              "RelativeDocumentMoniker": "Scanner\\SyntParser.cs",
+              "ToolTip": "C:\\Users\\dabac\\source\\repos\\POLIZ\\Scanner\\SyntParser.cs",
+              "RelativeToolTip": "Scanner\\SyntParser.cs",
+              "ViewState": "AgIAANcAAAAAAAAAAAAEwNsAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T18:02:18.105Z",
+              "WhenOpened": "2026-05-20T18:46:00.851Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "POLIZ.cs",
+              "DocumentMoniker": "C:\\Users\\dabac\\source\\repos\\POLIZ\\Scanner\\POLIZ.cs",
+              "RelativeDocumentMoniker": "Scanner\\POLIZ.cs",
+              "ToolTip": "C:\\Users\\dabac\\source\\repos\\POLIZ\\Scanner\\POLIZ.cs",
+              "RelativeToolTip": "Scanner\\POLIZ.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAqwFUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T17:59:33.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "FormGUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\dabac\\source\\repos\\Scanner\\Scanner\\FormGUI.cs",
+              "DocumentMoniker": "C:\\Users\\dabac\\source\\repos\\POLIZ\\Scanner\\FormGUI.cs",
               "RelativeDocumentMoniker": "Scanner\\FormGUI.cs",
-              "ToolTip": "C:\\Users\\dabac\\source\\repos\\Scanner\\Scanner\\FormGUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "Scanner\\FormGUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "ToolTip": "C:\\Users\\dabac\\source\\repos\\POLIZ\\Scanner\\FormGUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "RelativeToolTip": "Scanner\\FormGUI.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-18T03:43:20.133Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             }
           ]
         },
